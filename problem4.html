@@ -1,0 +1,32 @@
+<script>
+
+let a = 999;
+let c = 0
+let currentHighestPalindrome = 0;
+let palindrome = false;
+
+while(c == 0){
+    for (i = 999; i > 99; i--){
+        let d = a * i;
+        checkIfPalindrome(d);
+        if(d > currentHighestPalindrome && palindrome == true){
+            currentHighestPalindrome = d;
+            console.log(currentHighestPalindrome);
+        }
+    }
+    a--
+    if(a == 99){
+        c = 1
+        console.log("answer", currentHighestPalindrome)
+    }
+}
+
+function checkIfPalindrome (word) {
+    palindrome = false;
+    let reverseWord = word.toString().split("").reverse().join("");
+    if( reverseWord == word){
+        palindrome = true;
+    }
+}
+
+</script>

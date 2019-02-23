@@ -1,0 +1,41 @@
+<script>
+let x = 600851475143;
+let z = 2;
+let smallestFactor = 0
+let largestFactor;
+
+function findSmallestFactor () {
+    while(smallestFactor == 0){
+    if(x % z == 0){
+        smallestFactor = z;
+        z++;
+        handleSmallestFactor();
+    } else {
+        z++;
+    }
+}
+}
+
+function handleSmallestFactor () {
+    let largestFactor = x / smallestFactor
+    console.log("largestFactor", largestFactor)
+    handleLargestFactor(largestFactor)
+}
+
+function handleLargestFactor (largestFactor) {
+    for(i = 2; i < largestFactor; i++){
+        if(largestFactor % i == 0){
+            console.log("non-prime")
+            smallestFactor = 0
+            findSmallestFactor();
+        } 
+    }
+    displayAnswer(largestFactor)
+}
+
+function displayAnswer (largestFactor) { 
+    console.log(largestFactor);
+}
+
+findSmallestFactor();
+</script>

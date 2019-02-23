@@ -1,0 +1,14 @@
+<script>
+let a = 1;
+let b = 2;
+let runningTotal = 2;
+while(b < 4000000){
+    let c = a + b;
+    a = b;
+    b = c;
+    if(c % 2 == 0){
+        runningTotal = c + runningTotal;
+    }
+}
+console.log(runningTotal);
+</script>
